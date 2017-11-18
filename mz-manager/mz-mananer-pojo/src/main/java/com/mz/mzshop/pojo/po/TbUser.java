@@ -13,18 +13,18 @@ public class TbUser {
 
     private Integer right;
 
-    private Date create;
+    private Date created;
 
-    private Date update;
+    private Date updated;
 
-    public TbUser(Long id, String username, String password, String phone, Integer right, Date create, Date update) {
+    public TbUser(Long id, String username, String password, String phone, Integer right, Date created, Date updated) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.phone = phone;
         this.right = right;
-        this.create = create;
-        this.update = update;
+        this.created = created;
+        this.updated = updated;
     }
 
     public TbUser() {
@@ -71,19 +71,19 @@ public class TbUser {
         this.right = right;
     }
 
-    public Date getCreate() {
-        return create;
+    public Date getCreated() {
+        return created;
     }
 
-    public void setCreate(Date create) {
-        this.create = create;
+    public void setCreated(Date created) {
+        this.created = created;
     }
 
-    public Date getUpdate() {
-        return update;
+    public Date getUpdated() {
+        return updated;
     }
 
-    public void setUpdate(Date update) {
-        this.update = update;
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 }

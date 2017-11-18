@@ -4,6 +4,9 @@ import com.mz.mzshop.common.dto.Order;
 import com.mz.mzshop.common.dto.Page;
 import com.mz.mzshop.common.dto.Result;
 import com.mz.mzshop.pojo.vo.TbItemCustom;
+import com.mz.mzshop.pojo.vo.TbItemQuery;
+
+import java.util.List;
 
 
 /**
@@ -13,5 +16,11 @@ import com.mz.mzshop.pojo.vo.TbItemCustom;
  * Version:V1.0
  */
 public interface ItemService {
-    Result<TbItemCustom> getItemsByPage(Page page, Order order);
+    Result<TbItemCustom> getItemsByPage(Page page, Order order, TbItemQuery query);
+
+    int removeItemById(List<Long> ids);
+
+    int downItemById(List<Long> ids);
+
+    int upItemById(List<Long> ids);
 }

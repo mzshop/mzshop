@@ -6,8 +6,8 @@
     FORMAT(i.normal_price/100,2) AS normalPriceView, i.image, i.sold_num AS soldNum,
     FORMAT(i.coupon/100,2) AS couponView,
     i.sum, c.name AS catName, u.username as userName, a.name AS activityName,
-    i.update, i.stale,
-    DATE_FORMAT(i.create,'%Y-%m-%d') as createdString,
+    i.updated, i.stale, i.url,
+    DATE_FORMAT(i.created,'%Y-%m-%d') as createdString,
     CASE i.status
     WHEN 1 THEN "正常"
     WHEN 2 THEN "待审核"
@@ -15,20 +15,20 @@
     WHEN 4 THEN "已删除"
     ELSE "未知" END AS statusName
   </sql>
-  <!--<sql id="Where_Clause">-->
-    <!--<where>-->
-      <!--i.status != 3-->
-      <!--<if test="query != null and query.title != null and query.title != ''">-->
-        <!--and i.title like '%${query.title}%'-->
-      <!--</if>-->
-      <!--<if test="query != null and query.status != null and query.status != 0">-->
-        <!--and i.status = #{query.status}-->
-      <!--</if>-->
-    <!--</where>-->
-  <!--</sql>-->
+  <sql id="Where_Clause">
+    <where>
+      i.status != 4
+      <if test="query != null and query.title != null and query.title != ''">
+        and i.title like '%${query.title}%'
+      </if>
+      <if test="query != null and query.status != null and query.status != 0">
+        and i.status = #{query.status}
+      </if>
+    </where>
+  </sql>
 
   <select id="countItems" resultType="java.lang.Integer">
-    SELECT COUNT(1) FROM tb_item i WHERE i.status != 4
+    SELECT COUNT(1) FROM tb_item i <include refid="Where_Clause"></include>
   </select>
 
   <select id="listItemsByPage" resultType="com.mz.mzshop.pojo.vo.TbItemCustom">
@@ -36,7 +36,7 @@
     FROM tb_item i LEFT JOIN tb_item_cat c ON i.cid = c.id
     left JOIN tb_user u on i.uid = u.id
     left JOIN tb_item_activity a on i.aid = a.id
-    WHERE i.status != 4
+    <include refid="Where_Clause"></include>
     <choose>
       <when test="order != null and order.sort != null and order.order !=null">
         <foreach collection="order.orderParam" item="i" open="ORDER by CONVERT" separator="," close=""></foreach>

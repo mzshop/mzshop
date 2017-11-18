@@ -8,7 +8,8 @@
         <select id="status" class="easyui-combobox" >
             <option value="0">全部</option>
             <option value="1">正常</option>
-            <option value="2">下架</option>
+            <option value="2">待审核</option>
+            <option value="3">下架</option>
         </select>
         <!--http://www.cnblogs.com/wisdomoon/p/3330856.html-->
         <!--注意：要加上type="button",默认行为是submit-->
@@ -25,7 +26,7 @@
 <table id="tb"></table>
 <script>
     function add() {
-        zzshop.addTab('新增商品','item-add');
+        mzshop.addTab('新增商品','item-add');
     }
     function edit() {
         alert('编辑按钮');
@@ -142,6 +143,7 @@
                 return moment(value).format('LL');
             }},
             {field: 'statusName', title: '状态', width: 100},
+            {field: 'url', title: '优惠券链接', width: 100},
             {field: 'updated', title: '更新时间', width: 100,formatter:function (value,row,index) {
                 return moment(value).format('LL');
             }},

@@ -9,16 +9,16 @@ public class TbItemCat {
 
     private Integer status;
 
-    private Date create;
+    private Date created;
 
-    private Date update;
+    private Date updated;
 
-    public TbItemCat(Long id, String name, Integer status, Date create, Date update) {
+    public TbItemCat(Long id, String name, Integer status, Date created, Date updated) {
         this.id = id;
         this.name = name;
         this.status = status;
-        this.create = create;
-        this.update = update;
+        this.created = created;
+        this.updated = updated;
     }
 
     public TbItemCat() {
@@ -49,19 +49,19 @@ public class TbItemCat {
         this.status = status;
     }
 
-    public Date getCreate() {
-        return create;
+    public Date getCreated() {
+        return created;
     }
 
-    public void setCreate(Date create) {
-        this.create = create;
+    public void setCreated(Date created) {
+        this.created = created;
     }
 
-    public Date getUpdate() {
-        return update;
+    public Date getUpdated() {
+        return updated;
     }
 
-    public void setUpdate(Date update) {
-        this.update = update;
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 }
