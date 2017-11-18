@@ -5,8 +5,8 @@
     <constructor >
       <arg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="create" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="update" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="created" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="updated" jdbcType="TIMESTAMP" javaType="java.util.Date" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -68,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, create, update
+    id, name, created, updated
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mz.mzshop.pojo.po.TbItemTagExample" >
     select
@@ -91,10 +91,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.mz.mzshop.pojo.po.TbItemTag" >
-    insert into tb_item_tag (id, name, create, 
-      update)
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{create,jdbcType=TIMESTAMP}, 
-      #{update,jdbcType=TIMESTAMP})
+    insert into tb_item_tag (id, name, created, 
+      updated)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
+      #{updated,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.mz.mzshop.pojo.po.TbItemTag" >
     insert into tb_item_tag
@@ -105,11 +105,11 @@
       <if test="name != null" >
         name,
       </if>
-      <if test="create != null" >
-        create,
+      <if test="created != null" >
+        created,
       </if>
-      <if test="update != null" >
-        update,
+      <if test="updated != null" >
+        updated,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -119,11 +119,11 @@
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="create != null" >
-        #{create,jdbcType=TIMESTAMP},
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
       </if>
-      <if test="update != null" >
-        #{update,jdbcType=TIMESTAMP},
+      <if test="updated != null" >
+        #{updated,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -142,11 +142,11 @@
       <if test="record.name != null" >
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.create != null" >
-        create = #{record.create,jdbcType=TIMESTAMP},
+      <if test="record.created != null" >
+        created = #{record.created,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.update != null" >
-        update = #{record.update,jdbcType=TIMESTAMP},
+      <if test="record.updated != null" >
+        updated = #{record.updated,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -157,8 +157,8 @@
     update tb_item_tag
     set id = #{record.id,jdbcType=BIGINT},
       name = #{record.name,jdbcType=VARCHAR},
-      create = #{record.create,jdbcType=TIMESTAMP},
-      update = #{record.update,jdbcType=TIMESTAMP}
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>

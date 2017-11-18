@@ -25,15 +25,17 @@ public class TbItem {
 
     private Integer aid;
 
-    private Date create;
+    private Date created;
 
-    private Date update;
+    private Date updated;
 
     private Date stale;
 
     private Integer status;
 
-    public TbItem(Long id, String title, Long price, Long normalPrice, String image, Long soldNum, Long coupon, Long sum, Integer cid, Integer uid, Integer aid, Date create, Date update, Date stale, Integer status) {
+    private String url;
+
+    public TbItem(Long id, String title, Long price, Long normalPrice, String image, Long soldNum, Long coupon, Long sum, Integer cid, Integer uid, Integer aid, Date created, Date updated, Date stale, Integer status, String url) {
         this.id = id;
         this.title = title;
         this.price = price;
@@ -45,10 +47,11 @@ public class TbItem {
         this.cid = cid;
         this.uid = uid;
         this.aid = aid;
-        this.create = create;
-        this.update = update;
+        this.created = created;
+        this.updated = updated;
         this.stale = stale;
         this.status = status;
+        this.url = url;
     }
 
     public TbItem() {
@@ -143,20 +146,20 @@ public class TbItem {
         this.aid = aid;
     }
 
-    public Date getCreate() {
-        return create;
+    public Date getCreated() {
+        return created;
     }
 
-    public void setCreate(Date create) {
-        this.create = create;
+    public void setCreated(Date created) {
+        this.created = created;
     }
 
-    public Date getUpdate() {
-        return update;
+    public Date getUpdated() {
+        return updated;
     }
 
-    public void setUpdate(Date update) {
-        this.update = update;
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 
     public Date getStale() {
@@ -173,5 +176,13 @@ public class TbItem {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url == null ? null : url.trim();
     }
 }

@@ -5,7 +5,7 @@ import com.mz.mzshop.pojo.po.TbItem;
 /**
  * User: Administrator
  * Date: 2017/11/16
- * Time: 16:18
+ * Time: 21:26
  * Version:V1.0
  */
 public class TbItemCustom extends TbItem{
@@ -17,14 +17,6 @@ public class TbItemCustom extends TbItem{
     private String activityName;
     private String statusName;
     private String createdString;
-
-    public String getCreatedString() {
-        return createdString;
-    }
-
-    public void setCreatedString(String createdString) {
-        this.createdString = createdString;
-    }
 
     public Long getPriceView() {
         return priceView;
@@ -80,5 +72,13 @@ public class TbItemCustom extends TbItem{
 
     public void setStatusName(String statusName) {
         this.statusName = statusName;
+    }
+
+    public String getCreatedString() {
+        return createdString;
+    }
+
+    public void setCreatedString(String createdString) {
+        this.createdString = createdString;
     }
 }

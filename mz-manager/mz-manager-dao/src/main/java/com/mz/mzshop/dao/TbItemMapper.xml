@@ -14,10 +14,11 @@
       <arg column="cid" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="uid" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="aid" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="create" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="update" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="created" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="updated" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="stale" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="status" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="url" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -79,8 +80,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, title, price, normal_price, image, sold_num, coupon, sum, cid, uid, aid, create, 
-    update, stale, status
+    id, title, price, normal_price, image, sold_num, coupon, sum, cid, uid, aid, created, 
+    updated, stale, status, url
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mz.mzshop.pojo.po.TbItemExample" >
     select
@@ -116,13 +117,15 @@
     insert into tb_item (id, title, price, 
       normal_price, image, sold_num, 
       coupon, sum, cid, uid, 
-      aid, create, update, 
-      stale, status)
+      aid, created, updated, 
+      stale, status, url
+      )
     values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{price,jdbcType=BIGINT}, 
       #{normalPrice,jdbcType=BIGINT}, #{image,jdbcType=VARCHAR}, #{soldNum,jdbcType=BIGINT}, 
       #{coupon,jdbcType=BIGINT}, #{sum,jdbcType=BIGINT}, #{cid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, 
-      #{aid,jdbcType=INTEGER}, #{create,jdbcType=TIMESTAMP}, #{update,jdbcType=TIMESTAMP}, 
-      #{stale,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER})
+      #{aid,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, 
+      #{stale,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.mz.mzshop.pojo.po.TbItem" >
     insert into tb_item
@@ -160,17 +163,20 @@
       <if test="aid != null" >
         aid,
       </if>
-      <if test="create != null" >
-        create,
+      <if test="created != null" >
+        created,
       </if>
-      <if test="update != null" >
-        update,
+      <if test="updated != null" >
+        updated,
       </if>
       <if test="stale != null" >
         stale,
       </if>
       <if test="status != null" >
         status,
+      </if>
+      <if test="url != null" >
+        url,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -207,17 +213,20 @@
       <if test="aid != null" >
         #{aid,jdbcType=INTEGER},
       </if>
-      <if test="create != null" >
-        #{create,jdbcType=TIMESTAMP},
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
       </if>
-      <if test="update != null" >
-        #{update,jdbcType=TIMESTAMP},
+      <if test="updated != null" >
+        #{updated,jdbcType=TIMESTAMP},
       </if>
       <if test="stale != null" >
         #{stale,jdbcType=TIMESTAMP},
       </if>
       <if test="status != null" >
         #{status,jdbcType=INTEGER},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -263,17 +272,20 @@
       <if test="record.aid != null" >
         aid = #{record.aid,jdbcType=INTEGER},
       </if>
-      <if test="record.create != null" >
-        create = #{record.create,jdbcType=TIMESTAMP},
+      <if test="record.created != null" >
+        created = #{record.created,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.update != null" >
-        update = #{record.update,jdbcType=TIMESTAMP},
+      <if test="record.updated != null" >
+        updated = #{record.updated,jdbcType=TIMESTAMP},
       </if>
       <if test="record.stale != null" >
         stale = #{record.stale,jdbcType=TIMESTAMP},
       </if>
       <if test="record.status != null" >
         status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.url != null" >
+        url = #{record.url,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -293,10 +305,11 @@
       cid = #{record.cid,jdbcType=INTEGER},
       uid = #{record.uid,jdbcType=INTEGER},
       aid = #{record.aid,jdbcType=INTEGER},
-      create = #{record.create,jdbcType=TIMESTAMP},
-      update = #{record.update,jdbcType=TIMESTAMP},
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP},
       stale = #{record.stale,jdbcType=TIMESTAMP},
-      status = #{record.status,jdbcType=INTEGER}
+      status = #{record.status,jdbcType=INTEGER},
+      url = #{record.url,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -334,17 +347,20 @@
       <if test="aid != null" >
         aid = #{aid,jdbcType=INTEGER},
       </if>
-      <if test="create != null" >
-        create = #{create,jdbcType=TIMESTAMP},
+      <if test="created != null" >
+        created = #{created,jdbcType=TIMESTAMP},
       </if>
-      <if test="update != null" >
-        update = #{update,jdbcType=TIMESTAMP},
+      <if test="updated != null" >
+        updated = #{updated,jdbcType=TIMESTAMP},
       </if>
       <if test="stale != null" >
         stale = #{stale,jdbcType=TIMESTAMP},
       </if>
       <if test="status != null" >
         status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -361,10 +377,11 @@
       cid = #{cid,jdbcType=INTEGER},
       uid = #{uid,jdbcType=INTEGER},
       aid = #{aid,jdbcType=INTEGER},
-      create = #{create,jdbcType=TIMESTAMP},
-      update = #{update,jdbcType=TIMESTAMP},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP},
       stale = #{stale,jdbcType=TIMESTAMP},
-      status = #{status,jdbcType=INTEGER}
+      status = #{status,jdbcType=INTEGER},
+      url = #{url,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
