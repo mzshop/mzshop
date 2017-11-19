@@ -13,12 +13,15 @@ public class TbItemActivity {
 
     private Date updated;
 
-    public TbItemActivity(Long id, String name, Integer status, Date created, Date updated) {
+    private Date stale;
+
+    public TbItemActivity(Long id, String name, Integer status, Date created, Date updated, Date stale) {
         this.id = id;
         this.name = name;
         this.status = status;
         this.created = created;
         this.updated = updated;
+        this.stale = stale;
     }
 
     public TbItemActivity() {
@@ -63,5 +66,13 @@ public class TbItemActivity {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    public Date getStale() {
+        return stale;
+    }
+
+    public void setStale(Date stale) {
+        this.stale = stale;
     }
 }

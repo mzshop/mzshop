@@ -11,11 +11,14 @@ public class TbItemTag {
 
     private Date updated;
 
-    public TbItemTag(Long id, String name, Date created, Date updated) {
+    private Byte status;
+
+    public TbItemTag(Long id, String name, Date created, Date updated, Byte status) {
         this.id = id;
         this.name = name;
         this.created = created;
         this.updated = updated;
+        this.status = status;
     }
 
     public TbItemTag() {
@@ -52,5 +55,13 @@ public class TbItemTag {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    public Byte getStatus() {
+        return status;
+    }
+
+    public void setStatus(Byte status) {
+        this.status = status;
     }
 }

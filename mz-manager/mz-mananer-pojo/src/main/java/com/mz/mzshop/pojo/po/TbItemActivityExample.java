@@ -414,6 +414,66 @@ public class TbItemActivityExample {
             addCriterion("updated not between", value1, value2, "updated");
             return (Criteria) this;
         }
+
+        public Criteria andStaleIsNull() {
+            addCriterion("stale is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStaleIsNotNull() {
+            addCriterion("stale is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStaleEqualTo(Date value) {
+            addCriterion("stale =", value, "stale");
+            return (Criteria) this;
+        }
+
+        public Criteria andStaleNotEqualTo(Date value) {
+            addCriterion("stale <>", value, "stale");
+            return (Criteria) this;
+        }
+
+        public Criteria andStaleGreaterThan(Date value) {
+            addCriterion("stale >", value, "stale");
+            return (Criteria) this;
+        }
+
+        public Criteria andStaleGreaterThanOrEqualTo(Date value) {
+            addCriterion("stale >=", value, "stale");
+            return (Criteria) this;
+        }
+
+        public Criteria andStaleLessThan(Date value) {
+            addCriterion("stale <", value, "stale");
+            return (Criteria) this;
+        }
+
+        public Criteria andStaleLessThanOrEqualTo(Date value) {
+            addCriterion("stale <=", value, "stale");
+            return (Criteria) this;
+        }
+
+        public Criteria andStaleIn(List<Date> values) {
+            addCriterion("stale in", values, "stale");
+            return (Criteria) this;
+        }
+
+        public Criteria andStaleNotIn(List<Date> values) {
+            addCriterion("stale not in", values, "stale");
+            return (Criteria) this;
+        }
+
+        public Criteria andStaleBetween(Date value1, Date value2) {
+            addCriterion("stale between", value1, value2, "stale");
+            return (Criteria) this;
+        }
+
+        public Criteria andStaleNotBetween(Date value1, Date value2) {
+            addCriterion("stale not between", value1, value2, "stale");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
