@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<div id="toolbar">
+<div id="toolbarCat">
     <div style="padding: 5px; background-color: #fff;">
         <label>商品类目名称：</label>
         <input class="easyui-textbox" type="text" id="name">
@@ -20,7 +20,7 @@
         <button onclick="remove()" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true">删除</button>
     </div>
 </div>
-<table id="tb"></table>
+<table id="tbCat"></table>
 <script>
     function add() {
         mzshop.addTab('新增商品类目','item-cat-add');
@@ -53,7 +53,7 @@
     }
 
     function searchForm() {
-        $('#tb').datagrid('load',{
+        $('#tbCat').datagrid('load',{
             name: $('#name').val(),
             status: $('#status').combobox('getValue')
         });
@@ -64,9 +64,9 @@
 $(function () {
 
 
-    $("#tb").datagrid({
+    $("#tbCat").datagrid({
         multiSort:true,
-        toolbar:'#toolbar',
+        toolbar:'#toolbarCat',
         url: 'itemCats',
         //隔行变色，斑马线效果
         striped: true,
