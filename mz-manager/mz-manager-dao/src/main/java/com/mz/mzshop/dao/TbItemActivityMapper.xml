@@ -8,6 +8,7 @@
       <arg column="status" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="created" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="updated" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="stale" jdbcType="TIMESTAMP" javaType="java.util.Date" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -69,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, status, created, updated
+    id, name, status, created, updated, stale
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mz.mzshop.pojo.po.TbItemActivityExample" >
     select
@@ -93,9 +94,11 @@
   </delete>
   <insert id="insert" parameterType="com.mz.mzshop.pojo.po.TbItemActivity" >
     insert into tb_item_activity (id, name, status, 
-      created, updated)
+      created, updated, stale
+      )
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP})
+      #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, #{stale,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.mz.mzshop.pojo.po.TbItemActivity" >
     insert into tb_item_activity
@@ -115,6 +118,9 @@
       <if test="updated != null" >
         updated,
       </if>
+      <if test="stale != null" >
+        stale,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -131,6 +137,9 @@
       </if>
       <if test="updated != null" >
         #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stale != null" >
+        #{stale,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -158,6 +167,9 @@
       <if test="record.updated != null" >
         updated = #{record.updated,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.stale != null" >
+        stale = #{record.stale,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -169,7 +181,8 @@
       name = #{record.name,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
       created = #{record.created,jdbcType=TIMESTAMP},
-      updated = #{record.updated,jdbcType=TIMESTAMP}
+      updated = #{record.updated,jdbcType=TIMESTAMP},
+      stale = #{record.stale,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>

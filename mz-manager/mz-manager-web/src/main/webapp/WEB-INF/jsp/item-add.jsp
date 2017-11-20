@@ -138,7 +138,7 @@
     });
 
     $('#cid').combotree({
-        url: 'itemCats',
+        url: 'itemCatNodes',
         required: true,
         onBeforeSelect: function (node) {
             var isLeaf = $('#cid').tree('isLeaf', node.target);
@@ -150,7 +150,7 @@
     });
 
     $('#aid').combotree({
-        url: 'itemActivity',
+        url: 'itemActivityNodes',
         required: true,
         onBeforeSelect: function (node) {
             var isLeaf = $('#aid').tree('isLeaf', node.target);

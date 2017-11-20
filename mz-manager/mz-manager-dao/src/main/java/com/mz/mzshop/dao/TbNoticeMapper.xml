@@ -6,6 +6,7 @@
       <arg column="top" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="middle" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="foot" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="status" jdbcType="TINYINT" javaType="java.lang.Byte" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -67,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    top, middle, foot
+    top, middle, foot, status
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mz.mzshop.pojo.po.TbNoticeExample" >
     select
@@ -90,10 +91,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.mz.mzshop.pojo.po.TbNotice" >
-    insert into tb_notice (top, middle, foot
-      )
-    values (#{top,jdbcType=VARCHAR}, #{middle,jdbcType=VARCHAR}, #{foot,jdbcType=VARCHAR}
-      )
+    insert into tb_notice (top, middle, foot, 
+      status)
+    values (#{top,jdbcType=VARCHAR}, #{middle,jdbcType=VARCHAR}, #{foot,jdbcType=VARCHAR}, 
+      #{status,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="com.mz.mzshop.pojo.po.TbNotice" >
     insert into tb_notice
@@ -107,6 +108,9 @@
       <if test="foot != null" >
         foot,
       </if>
+      <if test="status != null" >
+        status,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="top != null" >
@@ -117,6 +121,9 @@
       </if>
       <if test="foot != null" >
         #{foot,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
@@ -138,6 +145,9 @@
       <if test="record.foot != null" >
         foot = #{record.foot,jdbcType=VARCHAR},
       </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -147,7 +157,8 @@
     update tb_notice
     set top = #{record.top,jdbcType=VARCHAR},
       middle = #{record.middle,jdbcType=VARCHAR},
-      foot = #{record.foot,jdbcType=VARCHAR}
+      foot = #{record.foot,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=TINYINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>

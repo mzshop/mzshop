@@ -1,6 +1,11 @@
 package com.mz.mzshop.service;
 
+import com.mz.mzshop.common.dto.NormalOrder;
+import com.mz.mzshop.common.dto.Page;
+import com.mz.mzshop.common.dto.Result;
 import com.mz.mzshop.common.dto.TreeNode;
+import com.mz.mzshop.pojo.vo.TbItemCatCustom;
+import com.mz.mzshop.pojo.vo.TbItemCatQuery;
 
 import java.util.List;
 
@@ -12,4 +17,8 @@ import java.util.List;
  */
 public interface ItemCatService {
     List<TreeNode> getItemCats();
+
+    Result<TbItemCatCustom> getItemCatsByPage(Page page, NormalOrder order, TbItemCatQuery query);
+
+    int removeItemCatsById(List<Long> ids);
 }

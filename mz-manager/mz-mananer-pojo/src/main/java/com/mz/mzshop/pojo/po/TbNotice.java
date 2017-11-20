@@ -7,10 +7,13 @@ public class TbNotice {
 
     private String foot;
 
-    public TbNotice(String top, String middle, String foot) {
+    private Byte status;
+
+    public TbNotice(String top, String middle, String foot, Byte status) {
         this.top = top;
         this.middle = middle;
         this.foot = foot;
+        this.status = status;
     }
 
     public TbNotice() {
@@ -39,5 +42,13 @@ public class TbNotice {
 
     public void setFoot(String foot) {
         this.foot = foot == null ? null : foot.trim();
+    }
+
+    public Byte getStatus() {
+        return status;
+    }
+
+    public void setStatus(Byte status) {
+        this.status = status;
     }
 }

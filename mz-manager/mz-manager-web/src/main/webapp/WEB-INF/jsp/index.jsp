@@ -23,8 +23,8 @@
             <ul class="easyui-tree">
                 <li data-options="attributes:{'href':'item-add'}">新增商品优惠券</li>
                 <li data-options="attributes:{'href':'item-list'}">查询商品优惠券</li>
-                <li data-options="attributes:{'href':'item-add'}">查询商品类目</li>
-                <li data-options="attributes:{'href':'item-param-list'}">查询活动信息</li>
+                <li data-options="attributes:{'href':'item-cat-list'}">查询商品类目</li>
+                <li data-options="attributes:{'href':'item-activity-list'}">查询活动信息</li>
                 <li data-options="attributes:{'href':'item-add'}">网站通知管理</li>
             </ul>
         </div>
