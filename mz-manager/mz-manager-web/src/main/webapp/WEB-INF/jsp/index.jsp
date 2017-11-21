@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="css/common.css">
 </head>
 <body class="easyui-layout">
-<div data-options="region:'north'" style="height:70px;padding-left:10px;">
-    <h2>买折网后台管理系统</h2>
+<div data-options="region:'north'" style="height:50px;padding-left:10px;">
+    <div style="margin-top: 10px">
+    <strong style="font-size: large">买折网后台管理系统</strong>
+    <span style="color: red;margin-left: 900px;font-size: large">欢迎您，${findUser.username}</span></div>
 </div>
+
 <div data-options="region:'south'" style="padding:5px;background:#eee;">
     系统版本：V1.0
 </div>
@@ -25,7 +28,8 @@
                 <li data-options="attributes:{'href':'item-list'}">查询商品优惠券</li>
                 <li data-options="attributes:{'href':'item-cat-list'}">查询商品类目</li>
                 <li data-options="attributes:{'href':'item-activity-list'}">查询活动信息</li>
-                <li data-options="attributes:{'href':'item-add'}">网站通知管理</li>
+                <li data-options="attributes:{'href':'notice-list'}">网站通知管理</li>
+                <li data-options="attributes:{'href':'item-tag-list'}">热门标签管理</li>
             </ul>
         </div>
         <div title="后台用户管理" data-options="iconCls:'icon-tip'" style="padding:10px 0;">

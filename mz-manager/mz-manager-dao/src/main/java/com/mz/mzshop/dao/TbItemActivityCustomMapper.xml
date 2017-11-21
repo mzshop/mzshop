@@ -10,7 +10,6 @@
   </sql>
   <sql id="Where_Clause">
     <where>
-      status != 2
       <if test="query != null and query.name != null and query.name != ''">
         and name like '%${query.name}%'
       </if>

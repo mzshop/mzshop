@@ -23,4 +23,6 @@ public interface ItemService {
     int downItemById(List<Long> ids);
 
     int upItemById(List<Long> ids);
+
+    //int saveItem(TbItem tbItem);
 }

@@ -100,7 +100,7 @@
     function submitForm(){
         $('#itemAddForm').form('submit',{
             //提交表单到item进行处理
-            url: 'item',
+            url: 'addItem',
             //在表单提交之前触发
             onSubmit:function () {
 
@@ -126,18 +126,6 @@
     });
     //加载商品类目的树形下拉框
     $('#cid').combotree({
-        url: 'itemCats',
-        required: true,
-        onBeforeSelect: function (node) {
-            var isLeaf = $('#cid').tree('isLeaf', node.target);
-            if (!isLeaf) {
-                $.messager.alert('警告', '请选中最终的类别！', 'warning');
-                return false;
-            }
-        }
-    });
-
-    $('#cid').combotree({
         url: 'itemCatNodes',
         required: true,
         onBeforeSelect: function (node) {
@@ -148,7 +136,7 @@
             }
         }
     });
-
+    //加载活动类目的树形下拉框
     $('#aid').combotree({
         url: 'itemActivityNodes',
         required: true,
