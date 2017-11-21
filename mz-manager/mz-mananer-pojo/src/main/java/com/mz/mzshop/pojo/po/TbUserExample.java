@@ -375,63 +375,63 @@ public class TbUserExample {
             return (Criteria) this;
         }
 
-        public Criteria andRightIsNull() {
-            addCriterion("right is null");
+        public Criteria andRightsIsNull() {
+            addCriterion("rights is null");
             return (Criteria) this;
         }
 
-        public Criteria andRightIsNotNull() {
-            addCriterion("right is not null");
+        public Criteria andRightsIsNotNull() {
+            addCriterion("rights is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRightEqualTo(Integer value) {
-            addCriterion("right =", value, "right");
+        public Criteria andRightsEqualTo(Integer value) {
+            addCriterion("rights =", value, "rights");
             return (Criteria) this;
         }
 
-        public Criteria andRightNotEqualTo(Integer value) {
-            addCriterion("right <>", value, "right");
+        public Criteria andRightsNotEqualTo(Integer value) {
+            addCriterion("rights <>", value, "rights");
             return (Criteria) this;
         }
 
-        public Criteria andRightGreaterThan(Integer value) {
-            addCriterion("right >", value, "right");
+        public Criteria andRightsGreaterThan(Integer value) {
+            addCriterion("rights >", value, "rights");
             return (Criteria) this;
         }
 
-        public Criteria andRightGreaterThanOrEqualTo(Integer value) {
-            addCriterion("right >=", value, "right");
+        public Criteria andRightsGreaterThanOrEqualTo(Integer value) {
+            addCriterion("rights >=", value, "rights");
             return (Criteria) this;
         }
 
-        public Criteria andRightLessThan(Integer value) {
-            addCriterion("right <", value, "right");
+        public Criteria andRightsLessThan(Integer value) {
+            addCriterion("rights <", value, "rights");
             return (Criteria) this;
         }
 
-        public Criteria andRightLessThanOrEqualTo(Integer value) {
-            addCriterion("right <=", value, "right");
+        public Criteria andRightsLessThanOrEqualTo(Integer value) {
+            addCriterion("rights <=", value, "rights");
             return (Criteria) this;
         }
 
-        public Criteria andRightIn(List<Integer> values) {
-            addCriterion("right in", values, "right");
+        public Criteria andRightsIn(List<Integer> values) {
+            addCriterion("rights in", values, "rights");
             return (Criteria) this;
         }
 
-        public Criteria andRightNotIn(List<Integer> values) {
-            addCriterion("right not in", values, "right");
+        public Criteria andRightsNotIn(List<Integer> values) {
+            addCriterion("rights not in", values, "rights");
             return (Criteria) this;
         }
 
-        public Criteria andRightBetween(Integer value1, Integer value2) {
-            addCriterion("right between", value1, value2, "right");
+        public Criteria andRightsBetween(Integer value1, Integer value2) {
+            addCriterion("rights between", value1, value2, "rights");
             return (Criteria) this;
         }
 
-        public Criteria andRightNotBetween(Integer value1, Integer value2) {
-            addCriterion("right not between", value1, value2, "right");
+        public Criteria andRightsNotBetween(Integer value1, Integer value2) {
+            addCriterion("rights not between", value1, value2, "rights");
             return (Criteria) this;
         }
 

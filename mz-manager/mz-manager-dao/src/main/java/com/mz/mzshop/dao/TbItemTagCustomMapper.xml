@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mz.mzshop.dao.TbItemTagCustomMapper">
+  <sql id="Base_Column_List" >
+    id,name,created,updated,
+    CASE status
+    WHEN 1 THEN "正常"
+    WHEN 2 THEN "删除"
+    ELSE "未知" END AS statusName
+  </sql>
+  <sql id="Where_Clause">
+    <where>
+      <if test="query != null and query.name != null and query.name != ''">
+        and name like '%${query.name}%'
+      </if>
+      <if test="query != null and query.status != null and query.status != 0">
+        and status = #{query.status}
+      </if>
+    </where>
+  </sql>
+
+  <select id="countItemTags" resultType="java.lang.Integer">
+    SELECT COUNT(1) FROM tb_item_cat <include refid="Where_Clause"></include>
+  </select>
+
+  <select id="listItemTagsByPage" resultType="com.mz.mzshop.pojo.vo.TbItemTagCustom">
+    SELECT <include refid="Base_Column_List"></include>
+    FROM tb_item_cat
+    <include refid="Where_Clause"></include>
+    <choose>
+      <when test="order != null and order.sort != null and order.order !=null">
+        <foreach collection="order.orderParam" item="i" open="ORDER by convert" separator="," close=""></foreach>
+        ${i}
+      </when>
+      <otherwise>
+        ORDER BY id DESC
+      </otherwise>
+    </choose>
+    limit #{page.offset},#{page.rows}
+  </select>
+</mapper>

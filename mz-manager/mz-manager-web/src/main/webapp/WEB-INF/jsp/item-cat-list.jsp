@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<div id="toolbarCat">
+<div id="catToolbar">
     <div style="padding: 5px; background-color: #fff;">
         <label>商品类目名称：</label>
         <input class="easyui-textbox" type="text" id="name">
@@ -20,7 +20,7 @@
         <button onclick="remove()" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true">删除</button>
     </div>
 </div>
-<table id="tbCat"></table>
+<table id="cattb"></table>
 <script>
     function add() {
         mzshop.addTab('新增商品类目','item-cat-add');
@@ -29,7 +29,7 @@
         alert('编辑按钮');
     }
     function remove() {
-        var selectedRows=$("#tb").datagrid("getSelections");
+        var selectedRows=$("#cattb").datagrid("getSelections");
         if(selectedRows.length==0){
             $.messager.alert("提示","请至少选中一条记录");
             return;
@@ -44,7 +44,7 @@
                     "itemCats/batchRemove",
                     {'ids[]':ids},
                     function (data) {
-                        $("#tb").datagrid('reload');
+                        $("#cattb").datagrid('reload');
                     },
                     'json'
                 );
@@ -53,7 +53,7 @@
     }
 
     function searchForm() {
-        $('#tbCat').datagrid('load',{
+        $('#cattb').datagrid('load',{
             name: $('#name').val(),
             status: $('#status').combobox('getValue')
         });
@@ -64,9 +64,9 @@
 $(function () {
 
 
-    $("#tbCat").datagrid({
+    $("#cattb").datagrid({
         multiSort:true,
-        toolbar:'#toolbarCat',
+        toolbar:'#catToolbar',
         url: 'itemCats',
         //隔行变色，斑马线效果
         striped: true,

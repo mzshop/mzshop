@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<div id="toolbar">
+<div id="activityToolbar">
     <div style="padding: 5px; background-color: #fff;">
         <label>优惠活动名称：</label>
         <input class="easyui-textbox" type="text" id="name">
@@ -19,7 +19,7 @@
         <button onclick="remove()" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true">删除</button>
     </div>
 </div>
-<table id="tb"></table>
+<table id="activitytb"></table>
 <script>
     function add() {
         mzshop.addTab('新增活动类目','item-activity-add');
@@ -28,12 +28,12 @@
         alert('编辑按钮');
     }
     function remove() {
-        var selectedRows=$("#tb").datagrid("getSelections");
+        var selectedRows=$("#activitytb").datagrid("getSelections");
         if(selectedRows.length==0){
             $.messager.alert("提示","请至少选中一条记录");
             return;
         }
-        $.messager.confirm("确认","您确认想要删除类目吗？",function(r){
+        $.messager.confirm("确认","您确认想要删除活动吗？",function(r){
             var ids=[];
             if(r){
                 for(var i=0;i<selectedRows.length;i++) {
@@ -43,7 +43,7 @@
                     "itemActivity/batchRemove",
                     {'ids[]':ids},
                     function (data) {
-                        $("#tb").datagrid('reload');
+                        $("#activitytb").datagrid('reload');
                     },
                     'json'
                 );
@@ -52,7 +52,7 @@
     }
 
     function searchForm() {
-        $('#tb').datagrid('load',{
+        $('#activitytb').datagrid('load',{
             name: $('#name').val(),
             status: $('#status').combobox('getValue')
         });
@@ -63,9 +63,9 @@
 $(function () {
 
 
-    $("#tb").datagrid({
+    $("#activitytb").datagrid({
         multiSort:true,
-        toolbar:'#toolbar',
+        toolbar:'#activityToolbar',
         url: 'itemActivity',
         //隔行变色，斑马线效果
         striped: true,

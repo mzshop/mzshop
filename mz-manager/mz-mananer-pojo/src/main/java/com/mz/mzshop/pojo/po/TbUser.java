@@ -11,18 +11,18 @@ public class TbUser {
 
     private String phone;
 
-    private Integer right;
+    private Integer rights;
 
     private Date created;
 
     private Date updated;
 
-    public TbUser(Long id, String username, String password, String phone, Integer right, Date created, Date updated) {
+    public TbUser(Long id, String username, String password, String phone, Integer rights, Date created, Date updated) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.phone = phone;
-        this.right = right;
+        this.rights = rights;
         this.created = created;
         this.updated = updated;
     }
@@ -63,12 +63,12 @@ public class TbUser {
         this.phone = phone == null ? null : phone.trim();
     }
 
-    public Integer getRight() {
-        return right;
+    public Integer getRights() {
+        return rights;
     }
 
-    public void setRight(Integer right) {
-        this.right = right;
+    public void setRights(Integer rights) {
+        this.rights = rights;
     }
 
     public Date getCreated() {

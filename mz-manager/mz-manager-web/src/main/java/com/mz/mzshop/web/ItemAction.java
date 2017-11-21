@@ -80,4 +80,17 @@ public class ItemAction {
         }
         return i;
     }
+
+//    @RequestMapping(value="/addItem",method = RequestMethod.POST)
+//    @ResponseBody
+//    public int addItem(TbItem tbItem){
+//        int i=0;
+//        try {
+//            i=itemService.saveItem(tbItem);
+//        }catch (Exception e){
+//            logger.error(e.getMessage(),e);
+//            e.printStackTrace();
+//        }
+//        return i;
+//    }
 }
