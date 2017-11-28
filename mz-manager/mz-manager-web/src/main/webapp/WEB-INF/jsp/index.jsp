@@ -40,7 +40,7 @@
         </div>
         <div title="索引库管理" data-options="iconCls:'icon-tip'" style="padding:10px 0;">
             <ul class="easyui-tree">
-                <li data-options="attributes:{'href':'index-item'}">solr索引库维护</li>
+                <li data-options="attributes:{'href':'item-solr'}">solr索引库维护</li>
             </ul>
         </div>
     </div>
