@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../mz-common/mz-common.iml" filepath="$PROJECT_DIR$/../mz-common/mz-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mz-manager/mz-manager.iml" filepath="$PROJECT_DIR$/../mz-manager/mz-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mz-manager/mz-manager-dao/mz-manager-dao.iml" filepath="$PROJECT_DIR$/../mz-manager/mz-manager-dao/mz-manager-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mz-manager/mz-manager-interface/mz-manager-interface.iml" filepath="$PROJECT_DIR$/../mz-manager/mz-manager-interface/mz-manager-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mz-manager/mz-manager-service/mz-manager-service.iml" filepath="$PROJECT_DIR$/../mz-manager/mz-manager-service/mz-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mz-manager/mz-manager-web/mz-manager-web.iml" filepath="$PROJECT_DIR$/../mz-manager/mz-manager-web/mz-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mz-manager/mz-mananer-pojo/mz-mananer-pojo.iml" filepath="$PROJECT_DIR$/../mz-manager/mz-mananer-pojo/mz-mananer-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mz-parent.iml" filepath="$PROJECT_DIR$/mz-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mz-portal-web/mz-portal-web.iml" filepath="$PROJECT_DIR$/../mz-portal-web/mz-portal-web.iml" />
+    </modules>
+  </component>
+</project>

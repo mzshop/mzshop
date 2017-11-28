@@ -104,5 +104,45 @@
         limit #{page.offset},#{page.rows}
     </select>
 
+  <select id="countItems" resultType="java.lang.Integer">
+    SELECT COUNT(1) FROM tb_item i <include refid="Where_Clause"></include>
+  </select>
 
+  <select id="listItemsByPage" resultType="com.mz.mzshop.pojo.vo.TbItemCustom">
+    SELECT <include refid="Base_Column_List"></include>
+    FROM tb_item i LEFT JOIN tb_item_cat c ON i.cid = c.id
+    left JOIN tb_user u on i.uid = u.id
+    left JOIN tb_item_activity a on i.aid = a.id
+    <include refid="Where_Clause"></include>
+    <choose>
+      <when test="order != null and order.sort != null and order.order !=null">
+        <foreach collection="order.orderParam" item="i" open="ORDER by CONVERT" separator="," close=""></foreach>
+        ${i}
+      </when>
+      <otherwise>
+        ORDER BY i.id DESC
+      </otherwise>
+    </choose>
+    limit #{page.offset},#{page.rows}
+  </select>
+
+  <select id="getSearchItemList" resultType="com.mz.mzshop.pojo.vo.TbSearchItemCustom">
+    SELECT
+    i.id,
+    i.title,
+    i.price,
+    i.normal_price as normalPrice,
+    i.coupon,
+    i.sold_num as soldNum,
+    i.image,
+    c.name as catName,
+    a.name as activityName
+    FROM
+    tb_item i
+    LEFT JOIN tb_item_cat c ON i.cid = c.id
+    LEFT JOIN tb_item_activity a ON i.aid=a.id
+    WHERE
+    i.status = 1
+    order by i.id desc
+  </select>
 </mapper>

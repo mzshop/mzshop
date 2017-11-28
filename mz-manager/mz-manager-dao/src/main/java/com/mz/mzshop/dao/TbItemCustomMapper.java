@@ -7,6 +7,7 @@ import com.mz.mzshop.pojo.po.TbItem;
 import com.mz.mzshop.pojo.vo.TbItemCustom;
 import com.mz.mzshop.pojo.vo.TbItemCustom2;
 import com.mz.mzshop.pojo.vo.TbItemQuery;
+import com.mz.mzshop.pojo.vo.TbSearchItemCustom;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -22,6 +23,6 @@ public interface TbItemCustomMapper {
 
     List<TbItemCustom2> listItemByAid(@Param("aid")Integer aid);
 
-
+    List<TbSearchItemCustom> getSearchItemList();
 
 }
