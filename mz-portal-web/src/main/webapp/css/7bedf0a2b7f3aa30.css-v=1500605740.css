@@ -1,0 +1,735 @@
+/*
+  This is a minified version of VeryIDE 
+  Last Updated:: 2017/07/21 10:55:41.
+  Files include::  /static/style/index.css
+*/
+#banner {
+    width: 100%
+}
+
+#banner .banner_con {
+    width: 1200px;
+    margin: 0 auto
+}
+
+#banner .cates {
+    background-color: #ee4f4f;
+    width: 260px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px 5px 0 0;
+    color: #FFF;
+    position: absolute;
+    top: 159px;
+    z-index: 9999;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 16px
+}
+
+#banner .list {
+    height: 300px;
+    width: 156px;
+    background-color: #fbeaf4;
+    z-index: 9999;
+    position: relative;
+    overflow: hidden
+}
+
+#banner .list:hover {
+    height: auto
+}
+
+#banner .list ul li {
+    width: 100%;
+    height: 37px;
+    line-height: 37px;
+    box-sizing: border-box;
+    padding-left: 38px;
+    font-size: 14px
+}
+
+#banner .list ul li i {
+    color: hotpink
+}
+
+#banner .list ul li a {
+    padding-left: 10px
+}
+
+#banner .list ul li:hover {
+    background-color: #efdfe4
+}
+
+#banner .list ul li a:hover {
+    text-decoration: none
+}
+
+#banner .unslider {
+    height: 300px
+}
+
+#banner .unslider .fcon {
+    display: none
+}
+
+#banner .unslider .fcon img {
+    opacity: 1
+}
+
+#banner .rightPic {
+    width: 300px;
+    height: 300px
+}
+
+#content {
+    width: 100%
+}
+
+#content .divider {
+    height: 45px;
+    margin: 15px auto;
+    letter-spacing: 1px;
+    word-break: break-all;
+    line-height: 45px;
+    text-align: left;
+    padding: 0 10px;
+    width: 1178px;
+    border: 1px solid #ffd6d6;
+    background-color: #FDFCE7
+}
+
+#content .discount {
+    width: 1200px;
+    margin: 0 auto
+}
+
+#content .discount .discount_head {
+    height: 50px;
+    width: 100%;
+    margin-bottom: 10px
+}
+
+#content .discount .discount_head .dishead_left {
+    width: 400px;
+    height: 50px;
+    line-height: 50px
+}
+
+#content .discount .discount_head .dishead_left h1 {
+    display: inline-block;
+    font-size: 20px
+}
+
+#content .discount .discount_head .dishead_left .pd {
+    padding-left: 20px
+}
+
+#content .discount .discount_head .dishead_right {
+    width: auto;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    color: #fbacc2
+}
+
+#content .discount .dis_product {
+    width: 1220px;
+    height: auto;
+    margin-left: -10px;
+    margin-right: 0
+}
+
+#content .discount .dis_product .pro_detail {
+    height: 272px;
+    width: 585px;
+    display: inline-block;
+    border: 1px solid transparent;
+    background-color: #fcf2f3;
+    margin: 10px
+}
+
+#content .discount .dis_product img {
+    width: 272px;
+    height: 272px;
+    border: 0;
+    max-width: 272px
+}
+
+#content .discount .dis_product .pro_detail .pro_intro {
+    height: 270px;
+    width: 310px
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .pro_title {
+    height: 20px;
+    padding-bottom: 0px;
+    font-size: 15px;
+    padding: 10px 10px;
+    color: #333;
+    max-height: 68px;
+    overflow: hidden
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .pro_title a {
+    color: #616161;
+    font-size: 16px
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .pro_price {
+    padding-left: 10px;
+    font-size: 14px;
+    margin-top: 6px;
+    color: #FB82A4
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .pro_price .iconfont {
+    color: #fb973e;
+    margin-right: 3px
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .pro_price em {
+    padding: 0 4px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #F3658D;
+    font-family: Arial
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .pro_price span {
+    font-family: Arial;
+    margin-left: 6px
+}
+
+
+#content .discount .dis_product .pro_detail .pro_intro .residue {
+    margin-top: 0px;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #797979
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .residue i {
+    padding: 0 5px;
+    color: #FB82A4;
+    font-size: 14px;
+    font-family: Arial
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .residue span {
+    font-family: Arial;
+    font-size: 14px
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .pro_nowPri {
+    margin-top: 0px;
+    background-color: #ee4f4f;
+    font-size: 15px;
+    margin-left: 10px;
+    width: 94%;
+    height: 50px;
+    line-height: 50px;
+    color: #fbe1ee
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .pro_nowPri .inPri {
+    font-weight: normal;
+    font-family: Arial
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .pro_nowPri span {
+    margin-left: 12px
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .pro_nowPri span em {
+    font-size: 28px;
+    margin-right: 20px;
+    font-weight: normal;
+    font-family: Arial;
+    color: #FFFFFF
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .buy {
+    height: 36px;
+    margin-left: 0px;
+    font-size: 14px;
+    margin-top: 20px
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .buy .sp1 {
+    color: #999999
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .buy a {
+    display: inline-block
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .buy .indexBorder {
+    border: 1px dashed red;
+    padding: 6px;
+    border-radius: 6px;
+    color: red;
+    display: inline-block;
+    cursor: pointer
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .buy .indexBorder:hover {
+    background-color: yellow
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .buy .indexto {
+    line-height: 18px;
+    font-size: 18px;
+    margin: 0 12px;
+    text-align: center;
+    display: inline-block;
+    font-family: '宋体';
+    color: #999999;
+    font-weight: bold
+}
+
+#content .discount .dis_product .pro_detail:hover {
+    border-color: red
+}
+
+#content .quality {
+    width: 1200px;
+    margin: 0 auto
+}
+
+#content .quality .discount_head {
+    height: 50px;
+    width: 100%;
+    margin-bottom: 10px
+}
+
+#content .quality .discount_head .dishead_left {
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+    color: #fbacc2
+}
+
+#content .quality .discount_head .dishead_left h1 {
+    display: inline-block;
+    font-size: 20px
+}
+
+#content .quality .discount_head .dishead_left .pd {
+    padding-left: 20px
+}
+
+#content .quality .discount_head .dishead_right {
+    width: auto;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px
+}
+
+#content .live {
+    width: 1200px;
+    margin: 0 auto
+}
+
+#content .live .discount_head {
+    height: 50px;
+    width: 100%;
+    margin-bottom: 10px
+}
+
+#content .live .discount_head .dishead_left {
+    width: 400px;
+    height: 50px;
+    line-height: 50px
+}
+
+#content .live .discount_head .dishead_left h1 {
+    display: inline-block;
+    font-size: 20px;
+    color: #585858
+}
+
+#content .live .discount_head .dishead_left h1 .tatal {
+    margin: 0 6px;
+    letter-spacing: 0;
+    font-size: 17px;
+    background-color: aquamarine;
+    padding: 4px 8px;
+    border-radius: 6px
+}
+
+#content .live .discount_head .dishead_left .pd {
+    padding-left: 20px
+}
+
+#content .live .discount_head .dishead_right {
+    width: auto;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px
+}
+
+#content .live .goods-list .img_thumb {
+    width: 283px;
+    height: 283px
+}
+
+.tebiede:hover {
+    background: #E81A62
+}
+
+.tebiede a:hover {
+    color: #fff
+}
+
+.poster {
+    width: 100%;
+    height: 218px;
+    margin-top: 10px;
+    display: block
+}
+
+ul, ol {
+    padding: 0
+}
+
+.banner {
+    position: relative;
+    overflow: auto;
+    text-align: center
+}
+
+.banner li {
+    list-style: none
+}
+
+.banner ul li {
+    float: left
+}
+
+.main-container {
+    width: 1200px;
+    margin: 0 auto
+}
+
+.clearfix {
+    clear: both;
+    overflow: hidden
+}
+
+ul.index-boutique {
+    list-style: none;
+    width: 1220px;
+    margin-left: -10px;
+    margin-right: 0
+}
+
+ul.index-boutique li {
+    float: left;
+    list-style: none;
+    border: 1px solid #ececec;
+    width: 283px;
+    margin: 10px;
+    background-color: #fff
+}
+
+ul.index-boutique li:hover {
+    border: 1px solid #df1956
+}
+
+ul.index-boutique li a img {
+    border: none;
+    max-width: 283px;
+    max-height: 285px;
+    width: 283px;
+    height: 283px
+}
+
+ul.index-boutique li .padding {
+    padding: 0 5px 5px 5px
+}
+
+ul.index-boutique li .padding .title i {
+    margin-top: 2px
+}
+
+ul.index-boutique li .padding .title .tmall {
+    background: url("../../static/style/pic/tmall.png") /*tpa=http://cms.shihuizhu.net/static/style/pic/tmall.png*/ 0 0 no-repeat;
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: left
+}
+
+ul.index-boutique li .padding .title .taobao {
+    background: url("../../static/style/pic/taobao.png") /*tpa=http://cms.shihuizhu.net/static/style/pic/taobao.png*/ 0 0 no-repeat;
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: left
+}
+
+ul.index-boutique li .padding .title span {
+    float: left;
+    width: 250px;
+    height: 20px;
+    overflow: hidden;
+    margin-left: 5px;
+    color: #666
+}
+
+ul.index-boutique li .padding .price-wrap {
+    position: relative;
+    margin: 4px 0
+}
+
+ul.index-boutique li .padding .price-wrap .icon {
+    color: #df1956;
+    font-size: 24px;
+    float: left;
+    margin-top: 2px
+}
+
+ul.index-boutique li .padding .price-wrap .price {
+    color: #df1956;
+    font-size: 26px;
+    font-family: Arial;
+    margin-left: -3px;
+    font-weight: bold;
+    float: left
+}
+
+ul.index-boutique li .padding .price-wrap .youpin {
+    background: url("../../static/style/pic/youpin.png") /*tpa=http://cms.shihuizhu.net/static/style/pic/youpin.png*/ no-repeat;
+    width: 30px;
+    height: 18px;
+    display: block;
+    float: left;
+    margin-top: 9px;
+    margin-left: 13px
+}
+
+ul.index-boutique li .padding .price-wrap .sold-count {
+    position: absolute;
+    top: 8px;
+    right: 0
+}
+
+ul.index-boutique li .padding .price-wrap .sold-count .text {
+    color: #9a9a9a;
+    font-size: 12px
+}
+
+ul.index-boutique li .padding .price-wrap .sold-count .num {
+    color: #e788a8;
+    font-family: "Arial"
+}
+
+ul.index-boutique li .padding .time-wrap {
+    position: relative;
+    margin: 2px 0
+}
+
+ul.index-boutique li .padding .time-wrap .time {
+    float: left;
+    background: url("../../static/style/pic/time.png") /*tpa=http://cms.shihuizhu.net/static/style/pic/time.png*/ no-repeat;
+    display: block;
+    width: 13px;
+    height: 13px;
+    margin-top: 2px
+}
+
+ul.index-boutique li .padding .time-wrap .date {
+    float: left;
+    font-size: 12px;
+    color: #5fa1ca;
+    margin-left: 5px
+}
+
+ul.index-boutique li .padding .time-wrap .buy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #5fa1ca;
+    font-size: 12px
+}
+
+ul.index-boutique li .price-wrap .text2 {
+    margin-left: 15px;
+    font-size: 12px;
+    color: #ffe4ed;
+    text-decoration: line-through
+}
+
+ul.index-boutique li .padding .time-wrap .buy:focus, ul.index-boutique li .padding .time-wrap .buy:hover {
+    color: #FF0000
+}
+
+ul.index-boutique .no-right {
+    margin-right: 0
+}
+
+.divide {
+    width: 100%;
+    margin-bottom: 40px;
+    border: 2px solid #f36;
+    border-left: 0;
+    border-right: 0
+}
+
+.list-icon {
+    float: right
+}
+
+.ticket-ved-more {
+    text-align: center;
+    border: 2px solid #E5E5E5;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    width: 1200px;
+    margin-bottom: 10px
+}
+
+.ticket-ved-more b {
+    color: #e94643
+}
+
+.cateTrees {
+    background: #fff;
+    border: 1px solid red;
+    border-top: none
+}
+
+.cateTrees ul {
+    height: 299px
+}
+
+.cateTrees ul li {
+    border-top: 1px dashed #ccc;
+    margin-top: -1px
+}
+
+.cateTrees .nav_warp {
+    margin: 0 10px;
+    padding: 20px 0 8px 2px;
+    display: inline-block;
+    position: relative
+}
+
+.nav_warp .hot {
+    color: #e94643
+}
+
+.primary_nav_li {
+    width: 33%;
+    position: relative;
+    cursor: default;
+    float: left
+}
+
+.nav_warp dt {
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    width: 70px;
+    max-width: 70px;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-align: left;
+    padding-right: 12px;
+    font-size: 15px
+}
+
+.nav_more_warp dt {
+    height: 14px;
+    line-height: 14px;
+    color: #333;
+    font-family: "宋体", sans-serif;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.nav_warp i {
+    background-image: url('../../static/style/pic/w-icon.png') /*tpa=http://cms.shihuizhu.net/static/style/pic/w-icon.png*/;
+    display: inline-block;
+    width: 19px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px
+}
+
+.nav_warp .cate_2 {
+    background-position: 2px -32px
+}
+
+.nav_warp .cate_3 {
+    background-position: 2px -60px
+}
+
+.nav_warp .cate_4 {
+    background-position: 2px -88px
+}
+
+.nav_warp .cate_5 {
+    background-position: 2px -120px
+}
+
+.nav_warp .cate_6 {
+    background-position: 2px -150px
+}
+
+.nav_warp .cate_7 {
+    background-position: 2px -180px
+}
+
+.nav_warp .cate_8 {
+    background-position: 3px -210px
+}
+
+.nav_warp .cate_9 {
+    background-position: 2px -243px
+}
+
+.nav_warp .cate_10 {
+    background-position: 2px -275px
+}
+
+.nav_warp .cate_11 {
+    background-position: 2px -307px
+}
+
+.nav_warp .cate_12 {
+    background-position: 2px -335px
+}
+
+.nav_warp .cate_13 {
+    background-position: 2px -365px
+}
+
+.nav_warp .cate_14 {
+    background-position: 2px -395px
+}
+
+.nav_warp .cate_15 {
+    background-position: 2px -425px
+}
+
+.nav_warp .cate_16 {
+    background-position: 2px -455px
+}
+
+.nav_warp .cate_17 {
+    background-position: 2px -488px
+}
+
+.nav_warp .cate_18 {
+    background-position: 2px -518px
+}
+
+.primary_nav_li_current .nav_warp {
+    padding-top: 10px;
+    background: 0 0
+}

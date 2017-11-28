@@ -10,6 +10,7 @@
     <modules>
         <module>../mz-common</module>
         <module>../mz-manager</module>
+        <module>../mz-portal-web</module>
     </modules>
     <!--打包方式，默认为jar-->
     <packaging>pom</packaging>
