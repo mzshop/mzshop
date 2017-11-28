@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,8 +11,8 @@
     <title>买折吧-每天千款优惠券秒杀，一折限时疯抢！</title>
     <meta name="keywords" content="买折吧,优惠券折扣,9块9包邮,限时特卖,优品折扣">
     <meta name="description" content="买折吧-优惠券折扣直播第一站！每天更新千款，纯人工筛选验货，限时限量特卖，全场1折包邮！">
-    <link rel="stylesheet" type="text/css" href="css/76a94faf8038f9e4.css-v=1500608085.css"/><link rel="icon" href="../images/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/7bedf0a2b7f3aa30.css-v=1500605740.css"/><script type="text/javascript" src="../js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/76a94faf8038f9e4.css-v=1500608085.css"/><link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/7bedf0a2b7f3aa30.css-v=1500605740.css"/><script type="text/javascript" src="js/jquery.min.js"></script>
 </head>
 
 
@@ -32,11 +31,11 @@
 
 <div id="header-info-common">
     <div id="header">
-        <a class="logo fl" href="-r=.htm" ><img src="images/583324827db3e.png" /></a>
+        <a class="logo fl" href="${pageContext.request.contextPath}/" ><img  src="images/583324827db3e.png" /></a>
         <div class="header-search">
             <div class="search">
-                <form method="get" action="http://www.maizheba.com/?r=find/" id="filterForm" name="filterForm" data-pjax="true">
-                    <input type="text" autocomplete="off" value="" placeholder="特价这里有，赶紧搜一搜" class="input_key js-query" id="kw" name="kw" />
+                <form method="get" action="" id="filterForm" name="filterForm" data-pjax="true">
+                    <input type="text" autocomplete="off" value="" placeholder="特价这里有，赶紧搜一搜" class="input_key js-query" id="searchInfo" name="searchInfo" />
                     <input type="hidden" name="token" value="qft0i1pcfokjn8p9e35eqftj14" />
                     <button rel="search" type="submit" >搜索</button>
                 </form>
@@ -48,11 +47,10 @@
 
 <div id="nav-inner-copy">
     <div id="nav">
-        <a class="active" href="-r=.htm" >首页</a>
-        <a class="" href="-r=direct.htm">优惠券直播<i class=""></i></a>
-        <a class="" href="-r=popularity.htm">今日疯抢榜<i class="hot"></i></a>
-        <a class="" href="-r=sift.htm">优质评分榜<i class=""></i></a>
-        <a class="" href="-r=cheap.htm">九块九精选<i class=""></i></a>
+        <a class="active" href="${pageContext.request.contextPath}/" >首页</a>
+        <c:forEach items="${listTbItemActivities}" var="tbItemActivity" varStatus="" >
+            <a class="" href="-r=direct.htm">${tbItemActivity.name}<i class=""></i></a>
+        </c:forEach>
     </div>
 </div>
 
@@ -67,14 +65,24 @@
 
                         <li class="primary_nav_li">
                             <dl class="nav_warp">
-                                <dt><a class="" href="-r=direct.htm" tppabs="http://www.maizheba.com/?r=direct"><span></span><i class="cate_18 "></i>全部</a></dt>
+                                <dt>
+                                    <a class="" href="${pageContext.request.contextPath}/directByPage" tppabs="http://www.maizheba.com/?r=direct">
+                                    <span></span>
+                                    <i class="cate_18 "></i>
+                                    全部
+                                     </a>
+                                </dt>
                             </dl>
                         </li>
 
                         <c:forEach items="${listTbItemCat}" var="tbItemCat" varStatus="">
                             <li class="primary_nav_li">
                                 <dl class="nav_warp">
-                                    <dt><a class="" href="-r=direct.htm" tppabs="http://www.maizheba.com/?r=direct"><span></span><i class="cate_18 "></i>${tbItemCat.name}...</a></dt>
+                                    <dt>
+                                        <a class="" href="${pageContext.request.contextPath}/directByPage?cid=${tbItemCat.id}">
+                                        <span></span>
+                                        <i class="cate_18 "></i>${tbItemCat.name}...</a>
+                                    </dt>
                                 </dl>
                             </li>
 
@@ -126,72 +134,51 @@
                     <span class="color_p">/ 将优选、性价比做到极致 /</span>
                 </div>
             </div>
+
+
             <div class="dis_product">
 
+                <c:forEach items="${listItem}" var="item" varStatus="">
+
+
                 <div class="pro_detail ">
-                    <a href="-r=item-641607.htm" target="_blank">
-                        <img _src="../images2/meinv.jpg"/>
+                    <a href="" target="_blank">
+                        <img _src="${item.image}"/>
                     </a>
                     <div class="pro_intro fr">
                         <p class="pro_title">
-                            <a href="-r=item-641607.htm"  target="_blank" isconvert="1">真找不到什么东西卖，就卖这个了</a>
+                            <a href=""  target="_blank" isconvert="1">${item.title}</a>
                         </p>
                         <div class="pro_price color_p">
                             <i class="iconfont">
-                                &#xe60a;</i>内部券<em>30</em>元，过期时间<span>20171119</span>
+                                </i>内部券<em>${item.coupon}</em>元，
+                            过期时间<span>
+                          ${item.stale}
+                        </span>
                         </div>
                         <div class="residue">
-                            优惠券总数<i class="color_p">5000</i>张
+                            优惠券总数<i class="color_p">${item.sum}</i>张
                         </div>
                         <div class="pro_nowPri">
-                            <span>下单价 ￥<em>59.00</em></span>
-                            在售价<em class="inPri">￥89.00</em>
+                            <span>下单价 ￥<em>${item.normalPrice}</em></span>
+                            在售价<em class="inPri">￥${item.price}</em>
                         </div>
                         <div class="buy">
                             <span class="sp1">购买流程：</span>
-                            <a href="-r=item-641607.htm" target="_blank">
+                            <a href="" target="_blank">
                                 <span class="indexBorder"> ①点我领券</span>
                             </a>
                             <span class="indexto">> </span>
-                            <a href="-r=item-641607.htm" target="_blank">
+                            <a href="" target="_blank">
                                 <span class="indexBorder">②点击下单</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
+                </c:forEach>
+            </div>
 
-
-                <div class="pro_detail ">
-                    <a href="-r=item-641607.htm" target="_blank">
-                        <img _src="../images2/weijin.jpg"/></a>
-                    <div class="pro_intro fr">
-                        <p class="pro_title">
-                            <a href="-r=item-641607.htm" target="_blank" isconvert="1">这个围巾不得了</a>
-                        </p>
-                        <div class="pro_price color_p">
-                            <i class="iconfont">
-                                &#xe60a;</i>内部券<em>10</em>元，过期时间<span>20171120</span>
-                        </div>
-                        <div class="residue">
-                            优惠券总数<i class="color_p">10000</i>张
-                        </div>
-                        <div class="pro_nowPri">
-                            <span>下单价 ￥<em>49.90</em></span>
-                            在售价<em class="inPri">￥59.90</em>
-                        </div>
-                        <div class="buy">
-                            <span class="sp1">购买流程：</span>
-                            <a href="-r=item-641607.htm"target="_blank">
-                                <span class="indexBorder"> ①点我领券</span>
-                            </a>
-                            <span class="indexto">> </span>
-                            <a href="-r=item-641607.htm" target="_blank">
-                                <span class="indexBorder">②点击下单</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 

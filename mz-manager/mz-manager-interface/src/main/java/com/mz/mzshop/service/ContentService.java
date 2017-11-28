@@ -1,9 +1,9 @@
 package com.mz.mzshop.service;
 
 
-import com.mz.mzshop.pojo.po.TbContent;
-import com.mz.mzshop.pojo.po.TbItemCat;
-import com.mz.mzshop.pojo.po.TbNotice;
+import com.mz.mzshop.common.dto.Page2;
+import com.mz.mzshop.pojo.po.*;
+import com.mz.mzshop.pojo.vo.TbItemCustom2;
 
 import java.util.List;
 
@@ -19,4 +19,12 @@ public interface ContentService
     TbNotice tbNoticeByStatus(int i);
 
     List<TbItemCat> listTbItemCat(int i);
+
+    List<TbItemActivity> listTbItemActivity(int i);
+
+    List<TbItemCustom2> listTbItemByAid(int i);
+
+    List<TbItem> listItemByCid(Page2 page2);
+
+    Integer getTotalCountsForItem(Page2 page2);
 }

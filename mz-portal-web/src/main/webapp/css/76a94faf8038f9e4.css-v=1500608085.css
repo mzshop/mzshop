@@ -227,7 +227,7 @@ body {
     margin: 15px 0 0 70px;
     width: 231px;
     height: 61px;
-    background-image: url('../../static/style/pic/baozhangs.png') /*tpa=http://cms.shihuizhu.net/static/style/pic/baozhangs.png*/
+    background-image: url('../images/baozhangs.png') /*tpa=http://cms.shihuizhu.net/static/style/pic/baozhangs.png*/
 }
 
 #header-info-common #header .header-search .search {

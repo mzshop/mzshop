@@ -1,12 +1,12 @@
 package com.mz.mzshop.service.impl;
 
 
+import com.mz.mzshop.common.dto.Page2;
 import com.mz.mzshop.common.jedis.JedisClient;
 import com.mz.mzshop.common.util.JsonUtils;
-import com.mz.mzshop.dao.TbContentMapper;
-import com.mz.mzshop.dao.TbItemCatMapper;
-import com.mz.mzshop.dao.TbNoticeMapper;
+import com.mz.mzshop.dao.*;
 import com.mz.mzshop.pojo.po.*;
+import com.mz.mzshop.pojo.vo.TbItemCustom2;
 import com.mz.mzshop.service.ContentService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -21,7 +21,6 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * User: DHC
  * Date: 2017/11/20
  * Time: 15:29
  * Version:V1.0
@@ -39,18 +38,16 @@ public class ContentServiceImpl implements ContentService {
     @Autowired
     TbItemCatMapper tbItemCatMapper;
 
+    @Autowired
+    TbItemActivityMapper tbItemActivityMapper;
+
+    @Autowired
+    TbItemMapper tbItemMapper;
+    @Autowired
+    TbItemCustomMapper tbItemCustomMapper;
+
     @Override
     public List<TbContent> listContentsByCid(Long id) {
-        //创建存放节点的集合
-       /* Set<HostAndPort> clusterSet = new HashSet<HostAndPort>();
-        clusterSet.add(new HostAndPort("101.132.178.43", 9001));
-        clusterSet.add(new HostAndPort("101.132.178.43", 9002));
-        clusterSet.add(new HostAndPort("101.132.178.43", 9003));
-        clusterSet.add(new HostAndPort("101.132.178.43", 9004));
-        clusterSet.add(new HostAndPort("101.132.178.43", 9005));
-        clusterSet.add(new HostAndPort("101.132.178.43", 9006));*/
-        //创建jedis集群对象进行使用
-       /* JedisCluster jedisCluster = new JedisCluster(clusterSet);*/
         List<TbContent> list = null;
         //查询缓存部分
         try {
@@ -73,15 +70,6 @@ public class ContentServiceImpl implements ContentService {
         criteria.andCategoryIdEqualTo(id);
         //执行查询
         list = contentDao.selectByExample(example);
-
-        //存入缓存部分
-       /* try {
-            jedisClient.hset("CONTENT_LIST", id + "", JsonUtils.objectToJson(list))
-        } catch (Exception e) {
-            logger.error(e.getMessage(), e);
-            e.printStackTrace();
-        }*/
-
         try{
 
             jedisClient.hset("MZ_CONTENT_LIST",id+"",JsonUtils.objectToJson(list));
@@ -109,4 +97,36 @@ public class ContentServiceImpl implements ContentService {
         List<TbItemCat> tbItemCats = tbItemCatMapper.selectByExample(example);
         return tbItemCats;
     }
+
+    @Override
+    public List<TbItemActivity> listTbItemActivity(int i) {
+        TbItemActivityExample example = new TbItemActivityExample();
+        TbItemActivityExample.Criteria criteria = example.createCriteria();
+        criteria.andStatusEqualTo(i);
+        List<TbItemActivity> tbItemActivities = tbItemActivityMapper.selectByExample(example);
+
+
+        return tbItemActivities;
+    }
+
+    @Override
+    public List<TbItemCustom2> listTbItemByAid(int i) {
+        /*TbItemExample example = new TbItemExample();
+        TbItemExample.Criteria criteria = example.createCriteria();
+        criteria.andAidEqualTo(i);
+        List<TbItem> list = tbItemMapper.selectByExample(example);*/
+        List<TbItemCustom2> tbItems = tbItemCustomMapper.listItemByAid(i);
+        return tbItems;
+    }
+
+    @Override
+    public List<TbItem> listItemByCid(Page2 page2) {
+        return tbItemCustomMapper.listItemsByCat(page2) ;
+    }
+
+    @Override
+    public Integer getTotalCountsForItem(Page2 page2) {
+        return tbItemCustomMapper.coutItemsByCat(page2);
+    }
+
 }
