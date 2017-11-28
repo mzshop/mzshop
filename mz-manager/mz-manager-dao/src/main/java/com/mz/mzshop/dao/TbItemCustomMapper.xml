@@ -48,4 +48,24 @@
     </choose>
     limit #{page.offset},#{page.rows}
   </select>
+
+  <select id="getSearchItemList" resultType="com.mz.mzshop.pojo.vo.TbSearchItemCustom">
+    SELECT
+    i.id,
+    i.title,
+    i.price,
+    i.normal_price as normalPrice,
+    i.coupon,
+    i.sold_num as soldNum,
+    i.image,
+    c.name as catName,
+    a.name as activityName
+    FROM
+    tb_item i
+    LEFT JOIN tb_item_cat c ON i.cid = c.id
+    LEFT JOIN tb_item_activity a ON i.aid=a.id
+    WHERE
+    i.status = 1
+    order by i.id desc
+  </select>
 </mapper>
